@@ -9,6 +9,8 @@ import {RiFireFill} from 'react-icons/ri'
 import {AiOutlineClose} from 'react-icons/ai'
 import { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 const dancingscript = Dancing_Script({
     weights: ["400", "500", "600", "700"],
@@ -27,6 +29,16 @@ const dancingscript = Dancing_Script({
 
 const Navbar = () => {
     const [nav, setNav] = useState();
+    const [showMovie, setShowMovie] = useState(false);
+    const [showSeries, setShowSeries] = useState(false);
+
+    const handleMovieClick = () => {
+        setShowMovie(!showMovie);
+    };
+
+    const handleSeriesClick = () => {
+        setShowSeries(!showSeries);
+    };
 
     function handleNav() {
         return setNav(prevnav => !prevnav)
@@ -37,8 +49,8 @@ const Navbar = () => {
 
 
   return (
-    <section className={`w-full h-auto py-3`}>
-        <div className='flex items-center justify-between max-w-[450px] sm:max-w-[620px] md:max-w-[1200px] m-auto bg-transparent text-white'>
+    <section className={`w-full h-auto py-3 border-bottom border-b-2 border-b-slate-500 rounded-full`}>
+        <div className='flex items-center justify-between max-w-[400px] sm:max-w-[620px] md:max-w-[1200px] m-auto bg-transparent text-white'>
             <BiMenuAltLeft onClick={handleNav} className="md:hidden" size={28} />
             <h1 className={`flex items-center ${pacifico.className} text-4xl font-semibold`}>
                 <FcFilmReel size={80} />
@@ -46,29 +58,53 @@ const Navbar = () => {
             </h1>
             <div className="hidden md:flex space-x-10">
                 <div>
-                    <h1 className={`flex items-center ${pacifico.className} text-xl`}>
+                    <h1 
+                        className={`flex items-center ${pacifico.className} text-xl cursor-pointer`}
+                        onClick={handleMovieClick}
+                    >
                         Movies
                         <IoMdArrowDropdown size={20} />
                     </h1>
-                    <ul className={`${unna.className} text-base font-extralight`}>
-                        <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
-                        <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
-                        <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
-                    </ul>     
+                    <AnimatePresence>
+                        {showMovie && (
+                            <motion.ul
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.3 }} 
+                                className={`${unna.className} absolute z-[2] text-lg space-y-3 font-extralight`}>
+                            <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
+                            <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
+                            <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
+                        </motion.ul>  
+                        )}      
+                    </AnimatePresence>
                 </div>
                 <div>
-                    <h1 className={`flex items-center ${pacifico.className} text-xl`}>
+                    <h1 
+                        className={`flex items-center ${pacifico.className} text-xl cursor-pointer`}
+                        onClick={handleSeriesClick}
+                    >
                         Series
                         <IoMdArrowDropdown size={20} />
                     </h1>
-                    <ul className={`${unna.className} text-base font-extralight`}>
-                        <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
-                        <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
-                        <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
-                    </ul>     
+                    <AnimatePresence>
+                        {showSeries && (
+                            <motion.ul
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.3 }} 
+                                className={`${unna.className} absolute z-[2] text-lg space-y-3 font-extralight`}>
+                            <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
+                            <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
+                            <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
+                        </motion.ul>  
+                        )}      
+                    </AnimatePresence>       
                 </div>              
             </div>
-            <div className={nav ? 'fixed pt-9 pl-6 md:hidden left-0 top-0 right-[50%] bottom-0 w-[60%] h-full bg-[#0d0346] ease-in-out duration-700 space-y-10 max-w-[450px] sm:max-w-[620px] m-auto' : 'fixed md:hidden left-[-100%] top-0 bottom-0 h-full bg-[#0d0346] ease-in-out duration-700'}>
+            <div className={nav ? 'fixed pt-9 pl-12 md:hidden left-0 top-0 right-[50%] bottom-0 w-[60%] h-full bg-[#0d0346] ease-in-out duration-700 space-y-10 max-w-[450px] sm:max-w-[620px] m-auto' : 'fixed md:hidden left-[-100%] top-0 bottom-0 h-full bg-[#0d0346] ease-in-out duration-700'}>
                 <div className="flex items-center">
                     <AiOutlineClose onClick={handleNav} size={28} />
                 </div>
