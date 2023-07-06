@@ -1,6 +1,5 @@
 'use client'
 
-
 import { Dancing_Script, Pacifico, Unna } from "next/font/google";
 import {BiMenuAltLeft} from 'react-icons/bi'
 import {IoMdArrowDropdown} from 'react-icons/io'
@@ -49,10 +48,12 @@ const Navbar = () => {
     <section className={`w-full h-auto py-3 border-bottom border-b-2 border-b-slate-500 rounded-full`}>
         <div className='flex items-center justify-between max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] m-auto bg-transparent text-white'>
             <BiMenuAltLeft onClick={handleNav} className="md:hidden" size={28} />
-            <h1 className={`flex items-center ${pacifico.className} text-4xl font-semibold`}>
-                <FcFilmReel size={80} />
-                Movie Trailer
-            </h1>
+            <Link href='/'>
+                <h1 className={`flex items-center ${pacifico.className} text-4xl font-semibold`}>
+                    <FcFilmReel size={80} />
+                    Movie Trailer
+                </h1>
+            </Link>
             <div className="hidden md:flex space-x-10">
                 <div className="space-y-3">
                     <h1 
