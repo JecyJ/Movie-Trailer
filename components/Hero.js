@@ -90,35 +90,6 @@ export default Hero;
 
 
 
-
-    // const fetchMovies = async () => {
-    //   try {
-    //     const response = await fetch(
-    //       "https://api.themoviedb.org/3/trending/movie/week?api_key=" +
-    //       process.env.NEXTJS_APP_MOVIE_API_KEY + "language=en-US"
-    //     );
-
-    //     if (response.ok) {
-    //       const data = await response.json();
-    //       setPopular(data.results);
-    //       console.log("data", data.results);
-    //     } else {
-    //       throw new Error("Request failed with status: " + response.status);
-    //     }
-    //   } catch (error) {
-    //     console.log("Error fetching movie data:", error);
-    //   }
-    // };
-
-    // console.log('data', data)
-    // fetchMovies();
-
-
-
-
-
-
-
 // 'use client'
 
 // import { useEffect, useState } from "react";

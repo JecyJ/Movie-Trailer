@@ -1,5 +1,6 @@
 
 
+
 const Details = () => {
   return (
     <section>
