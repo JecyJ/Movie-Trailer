@@ -36,14 +36,12 @@ const PopularSeries = () => {
 
   const handlePrev = (event) => {
     event.preventDefault();
-    event.stopPropagation();
     const prevPage = currentPage === 1 ? totalPages : currentPage - 1;
     setCurrentPage(prevPage);
   };
-
+  
   const handleNext = (event) => {
     event.preventDefault();
-    event.stopPropagation();
     const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
     setCurrentPage(nextPage);
   };
@@ -79,27 +77,25 @@ const PopularSeries = () => {
           <div className="flex space-x-3 pt-3">
             <motion.div
               className="flex justify-center items-center text-orange-500 cursor-pointer"
-              style={{ zIndex: 1 }}
-              onClick={handlePrev}
+              style={{ zIndex: 1 }}              
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.3 }}
             >
-              <Link href={`/?page=${currentPage - 1}`}>
-                <p><BiLeftArrow size={20} /></p>
+              <Link href={`?page=${currentPage - 1}`} >
+                <p onClick={handlePrev}><BiLeftArrow size={20} /></p>
               </Link>
             </motion.div>
             <p className="text-white">{currentPage}</p>
             <motion.div
               className="flex justify-center items-center text-orange-500 cursor-pointer"
-              style={{ zIndex: 1 }}
-              onClick={handleNext}
+              style={{ zIndex: 1 }}              
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.3 }}
             >
-              <Link href={`/?page=${currentPage + 1}`}>
-                <p><BiRightArrow size={20} /></p>
+              <Link href={`?page=${currentPage + 1}`} >
+                <p onClick={handleNext}><BiRightArrow size={20} /></p>
               </Link>
             </motion.div>
           </div>
@@ -113,7 +109,8 @@ export default PopularSeries;
 
 
 
-
+// 
+// 
 
 
 
