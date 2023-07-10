@@ -65,11 +65,9 @@ const TopRated = () => {
   return (
     <section className="w-full h-auto my-3">
       <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] m-auto">
-        <Link href="/toprated">
-          <h1 className="text-xl text-center text-white font-bold pb-5">
-            TopRated Movies
-          </h1>
-        </Link>
+        <h1 className="text-xl text-center text-white font-bold pb-5">
+          TopRated Movies
+        </h1>
         <div className="flex flex-col items-center justify-center space-x-4">
           <div className="flex overflow-x-auto">
             {renderTopRated()}
