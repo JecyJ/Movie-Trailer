@@ -56,7 +56,7 @@ const Hero = () => {
   );
 
   return (
-    <section className="w-full h-auto py-5">
+    <section className="relative z-[-2] w-full h-auto py-5">
       <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] m-auto relative">
         <h1 className="text-3xl text-center text-red-500 font-bold">Trending Movies</h1>
         <div className="flex items-center justify-center space-x-4">
