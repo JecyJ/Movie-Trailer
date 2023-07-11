@@ -71,9 +71,12 @@ const Navbar = () => {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }} 
                                 className={`${unna.className} absolute z-[2] text-lg space-y-3 font-extralight`}>
-                            <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
-                            <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
-                            <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
+                                <Link href='/popularmovies'>
+                                    <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
+                                </Link>
+                            
+                            {/* <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
+                            <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li> */}
                         </motion.ul>  
                         )}      
                     </AnimatePresence>
@@ -94,9 +97,12 @@ const Navbar = () => {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }} 
                                 className={`${unna.className} absolute z-[2] text-lg space-y-3 font-extralight`}>
-                            <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
-                            <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
-                            <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
+                                <Link href='/series'>
+                                    <li className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
+                                </Link>
+                            
+                            {/* <li className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
+                            <li className="flex items-center space-x-2">Toprated <FcRating size={18} /></li> */}
                         </motion.ul>  
                         )}      
                     </AnimatePresence>       
@@ -112,15 +118,15 @@ const Navbar = () => {
                         Movies
                     </h1>
                     <ul className={`${unna.className} text-xl font-extralight space-y-3`}>
-                        <Link href='/'>
+                        <Link href='/popularmovies'>
                             <li onClick={handleNav} className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
                         </Link>
-                        <Link href='/'>
+                        {/* <Link href='/'>
                             <li onClick={handleNav} className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
                         </Link>
                         <Link href='/'>
                             <li onClick={handleNav} className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
-                        </Link>                       
+                        </Link>                        */}
                     </ul>     
                 </div>
                 <div className="space-y-3">
@@ -128,15 +134,15 @@ const Navbar = () => {
                         Series
                     </h1>
                     <ul className={`${unna.className} text-xl space-y-3 font-extralight`}>
-                        <Link href='/'>
+                        <Link href='/series'>
                             <li onClick={handleNav} className="flex items-center space-x-2">Popular <FcClapperboard size={20} /></li>
                         </Link>
-                        <Link href='/'>
+                        {/* <Link href='/'>
                             <li onClick={handleNav} className="flex items-center space-x-2">Upcoming <RiFireFill className="text-red-500" size={20} /></li>
                         </Link>
                         <Link href='/'>
                             <li onClick={handleNav} className="flex items-center space-x-2">Toprated <FcRating size={18} /></li>
-                        </Link>
+                        </Link> */}
                         
                         
                         

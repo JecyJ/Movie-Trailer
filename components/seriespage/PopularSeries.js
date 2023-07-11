@@ -16,7 +16,7 @@ const PopularSeries = () => {
   const fetchPopularSeries = async (page) => {
     try {
       const response = await fetch(
-        `${API_URL}tv/top_rated?language=en-US&api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}&page=${page}`
+        `${API_URL}tv/popular?language=en-US&api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}&page=${page}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -66,7 +66,7 @@ const PopularSeries = () => {
     <section className="w-full h-auto my-3">
       <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1200px] m-auto">
         <h1 className="text-xl text-center text-white font-bold pb-5">
-          Popular Series
+          Series
         </h1>
         <div className="flex flex-col items-center justify-center space-x-4">
           <div className="flex overflow-x-auto">
