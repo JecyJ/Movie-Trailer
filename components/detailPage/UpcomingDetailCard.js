@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import {AiTwotoneStar} from 'react-icons/ai'
+import { AiTwotoneStar } from 'react-icons/ai';
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-
-const UpcomingMovieCard = ({ movie }) => {
+const UpcomingDetailCard = ({ movie }) => {
   const ratingColor = movie.vote_average >= 5 ? "text-green-600" : "text-red-600";
 
   return (
@@ -26,11 +25,13 @@ const UpcomingMovieCard = ({ movie }) => {
             </h1>
             <h1 className="text-white text-xs">{movie.release_date}</h1>
           </div>
-          <h1 className="text-white text-xs px-2 pt-1 pb-2">{movie.original_title}</h1>
+          <h1 className="text-white text-xs px-2 pt-1 pb-2">{movie.title}</h1>
+          <p className="text-gray-400 text-sm px-2">{movie.overview}</p>
+          {/* <p className="text-gray-400 text-sm px-2">{movie.casts.join(', ')}</p> */}
         </div>
       </Link>
     </section>
   );
 };
 
-export default UpcomingMovieCard;
+export default UpcomingDetailCard;

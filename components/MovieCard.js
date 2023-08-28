@@ -7,7 +7,7 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 const MovieCard = ({ movie}) => {
   return (
-    <section className="w-full h-auto my-4">
+    <section className="w-[400px] m-auto h-auto my-4">
       <Link href="/details">
         <div className="space-y-3">
           <Image
