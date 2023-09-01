@@ -1,10 +1,10 @@
-import UpcomingDetail from "@components/detailPage/UpcomingDetail";
+import MovieDetails from "@components/detailPage/MovieDetails";
 
 
 const Upcoming = () => {
   return (
     <section>
-        <UpcomingDetail />
+        <MovieDetails />
     </section>
   )
 }

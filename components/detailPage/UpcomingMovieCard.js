@@ -10,7 +10,7 @@ const UpcomingMovieCard = ({ movie }) => {
 
   return (
     <section className="w-full h-auto">
-      <Link href='/upcomingdetails'>
+      {/* <Link href={`/upcomingdetails?movieId=${movie.id}`}> */}      
         <div className="space-y-2 border border-slate-700 rounded-3xl shadow-2xl">
           <Image
             className="border rounded-3xl border-slate-700 w-auto sm:w-auto"
@@ -28,9 +28,11 @@ const UpcomingMovieCard = ({ movie }) => {
           </div>
           <h1 className="text-white text-xs px-2 pt-1 pb-2">{movie.original_title}</h1>
         </div>
-      </Link>
+      {/* </Link> */}
     </section>
   );
 };
 
 export default UpcomingMovieCard;
+
+// <Link  href={`/upcomingdetails?${movie.id}&image=${movie.poster_path}&title=${movie.original_title}&overview=${movie.overview}&rating=${movie.vote_average}&language=${movie.original_language}`}>
