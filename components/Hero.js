@@ -1,6 +1,5 @@
 'use client'
 
-
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -38,11 +37,10 @@ const Hero = () => {
         <Splide 
           options={{
             drag:'free',
-            focus:"center",
-            autoWidth:false,
+            autoplay: "pause",
             type:'loop',
             perPage:1,
-            arrows:true,
+            arrows:'true',
             pagination:false
           }}
         >

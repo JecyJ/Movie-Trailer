@@ -1,18 +1,15 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 import {AiTwotoneStar} from 'react-icons/ai'
 import Trailer from "./Trailer";
-import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 
 
 
 const MovieDetails = () => {
-    // const params = useParams();
-    const router = useRouter()
-    // const {id} = router;
+  const params = useParams()
   const API_URL = "https://api.themoviedb.org/3/";
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
   const [movieDetails, setMovieDetails] = useState([]);
@@ -22,7 +19,7 @@ const MovieDetails = () => {
   const fetchMovieDetails = async () => {
     try {
       const response = await fetch(
-        `${API_URL}movie/${router.query}?language=en-US&api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
+        `${API_URL}movie/${params.name}?language=en-US&api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -37,7 +34,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     fetchMovieDetails();
-  }, []);
+  }, [params.name]);
   
 
 
